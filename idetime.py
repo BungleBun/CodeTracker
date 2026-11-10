@@ -20,11 +20,11 @@ def is_app_running(process_name):
             if process_name.lower() in proc_name.lower():
                 closed_time = time.time()
                 print(f"{proc_name} CLOSED")
-                active_time = closed_time - opened_time
-                total_time = total_time + active_time
-                print(f"Active time:{int(active_time)}")
+                session_time = closed_time - opened_time
+                total_time = total_time + session_time
+                print(f"Session time:{int(session_time)}")
                 print(f"Total time: {int(total_time)}")
-                active_time = 0
+                session_time = 0
 
         previous_processes = current_processes
 
